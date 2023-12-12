@@ -28,15 +28,16 @@ if ($status==false) {
     $formattedDate = $date->format('Y-m-d');
     $view .= '<tr>';
     $view .= '<td class = "first-column">' . h($formattedDate). '</td>';
-    // $thumbnailUrl = 'path_to_your_placeholder_image.jpg'; 
-    // $view .= '<td><img src="' . $thumbnailUrl . '" alt="Thumbnail" style="width:100px;height:100px;"></td>';
+    preg_match("/dp\\/(\\d{10})(?:\\/ref|\\/|$)/", h($result['url']), $matches);
+    $asin = $matches[1];
+    $thumbnailUrl = "https://images-na.ssl-images-amazon.com/images/P/".$asin.".09.TZZZZZZZ";
+    $view .= '<td><img src="' . $thumbnailUrl . '" alt="Thumbnail"></td>';
     $view .= '<td><a href="' . h($result['url']) . '" target="_blank">' . h($result['name']) . '</a></td>';
     $view .= '<td>' . h($result['comment']) . '</td>';
     $view .= '</tr>';
 }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ja">
