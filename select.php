@@ -1,13 +1,7 @@
 <?php
 //1.  DB接続します
 require_once('funcs.php');
-
-try {
-  //Password注意。MAMP='root'　XAMPP=''
-  $pdo = new PDO('mysql:dbname=gs_db1; charset=utf8; host=localhost', 'root', '');
-} catch (PDOException $e) {
-  exit('DBConnectError:' . $e->getMessage());
-}
+$pdo = db_conn();
 
 //２．データ取得SQL作成
 $stmt = $pdo->prepare("SELECT * FROM gs_bm_table");
@@ -34,6 +28,12 @@ if ($status==false) {
     $view .= '<td><a href="' . h($result['url']) . '" target="_blank">' . h($result['name']) . '</a></td>';
     $view .= '<td>' . h($result['comment']) . '</td>';
     $view .= '<td class = "first-column">' . h($formattedDate). '</td>';
+    $view .= '<td><a href="detail.php?id=' . $result['id'] . '">';
+    $view .= '<button class = update >更新</button>';
+    $view .= '</a></td>';
+    $view .= '<td><a href="delete.php?id=' . $result['id'] . '">';
+    $view .= '<button class = delete >削除</button>';
+    $view .= '</a></td>';
     $view .= '</tr>';
 }
 }

@@ -6,12 +6,8 @@ $url = $_POST['url'];
 $comment = $_POST['comment'];
 
 //2. DB接続
-try {
-    //Password注意。MAMP='root'　XAMPP=''
-    $pdo = new PDO('mysql:dbname=gs_db1; charset=utf8; host=localhost', 'root', '');
-} catch (PDOException $e) {
-    exit('DBConnectError:' . $e->getMessage());
-}
+require_once('funcs.php');
+$pdo = db_conn();
 
 //３．データ登録SQL作成
 $stmt = $pdo->prepare('INSERT INTO gs_bm_table(id, name, url, comment, date)
