@@ -112,6 +112,7 @@ form input[type="submit"]:hover {
     margin-bottom: 10px;
     text-decoration: none;
     color: red;
+    white-space: nowrap;
 }
 
 .update {
@@ -123,4 +124,5 @@ form input[type="submit"]:hover {
     margin-bottom: 10px;
     text-decoration: none;
     color: #007bff;
+    white-space: nowrap;
 }

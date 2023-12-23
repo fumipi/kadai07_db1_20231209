@@ -28,11 +28,10 @@ if ($status==false) {
     $view .= '<td><a href="' . h($result['url']) . '" target="_blank">' . h($result['name']) . '</a></td>';
     $view .= '<td>' . h($result['comment']) . '</td>';
     $view .= '<td class = "first-column">' . h($formattedDate). '</td>';
-    $view .= '<td><a href="detail.php?id=' . $result['id'] . '">';
-    $view .= '<button class = update >更新</button>';
-    $view .= '</a></td>';
     $view .= '<td><a href="delete.php?id=' . $result['id'] . '">';
-    $view .= '<button class = delete >削除</button>';
+    $view .= '<button class = delete >削除</button></a></td>';
+    $view .= '<td><a href="index.php?id=' . $result['id'] . '">';
+    $view .= '<button class = update >更新</button>';
     $view .= '</a></td>';
     $view .= '</tr>';
 }

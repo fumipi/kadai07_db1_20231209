@@ -20,5 +20,6 @@ if ($status === false) {
     $error = $stmt->errorInfo();
     exit('SQLError:' . print_r($error, true));
 } else {
-    redirect('index.php');
+    header('Location: index.php?tab=list');
+    exit;
 }
