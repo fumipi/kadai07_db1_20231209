@@ -2,7 +2,7 @@
 
 ## DEMO
 
-  - さくらのレンタルサーバー
+  - さくらのレンタルサーバーにデプロイしています。
   - https://toyodafumiko.sakura.ne.jp/bookmark_app/index.php
 
 ## 紹介と使い方
